@@ -2,7 +2,7 @@
 
 digraph G {
   graph [ rankdir="LR" bgcolor="#ffffff" ]
-  node [ style="filled" shape="record" gradientangle="180" ]
+  node [ style="filled" shape="Mrecord" gradientangle="180" ]
   edge [ arrowhead="none" arrowtail="none" dir="both" ]
 
   n1 [
