@@ -1,0 +1,162 @@
+<!DOCTYPE html><html>
+<head><meta charset="utf-8"></head>
+<body><script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://unpkg.com/@hpcc-js/wasm@0.3.11/dist/index.min.js"></script>
+<script src="https://unpkg.com/d3-graphviz@3.0.5/build/d3-graphviz.js"></script>
+<div id="graph" style="text-align: center;"></div>
+<script>
+var graphviz = d3.select("#graph").graphviz()
+   .on("initEnd", () => { graphviz.renderDot(d3.select("#digraph").text()); });
+</script>
+<textarea id="digraph" style="display:none; height:0px;">
+# You may copy and paste all this to http://viz-js.com/
+
+digraph G {
+  graph [ rankdir="LR" bgcolor="#ffffff" ]
+  node [ style="filled" shape="record" gradientangle="180" ]
+  edge [ arrowhead="none" arrowtail="none" dir="both" ]
+
+  n1 [
+    fillcolor="#f5f5f5" color="#6c6c6c" penwidth="1"
+    label=<<table style="rounded" border="0" cellborder="0" cellspacing="0" cellpadding="1">
+      <tr><td bgcolor="#e0e0e0" align="center" colspan="1"><font color="#000000"><b>Album</b></font></td></tr>
+      <tr><td align="left"><font color="#000000"><u>AlbumId</u></font></td></tr>
+      <tr><td align="left"><font color="#000000">Title</font></td></tr>
+      <tr><td align="left"><font color="#000000"><i>ArtistId</i></font></td></tr>
+    </table>>
+  ]
+  n2 [
+    fillcolor="#f5f5f5" color="#6c6c6c" penwidth="1"
+    label=<<table style="rounded" border="0" cellborder="0" cellspacing="0" cellpadding="1">
+      <tr><td bgcolor="#e0e0e0" align="center" colspan="1"><font color="#000000"><b>Artist</b></font></td></tr>
+      <tr><td align="left"><font color="#000000"><u>ArtistId</u></font></td></tr>
+      <tr><td align="left"><font color="#000000">Name*</font></td></tr>
+    </table>>
+  ]
+  n3 [
+    fillcolor="#f5f5f5" color="#6c6c6c" penwidth="1"
+    label=<<table style="rounded" border="0" cellborder="0" cellspacing="0" cellpadding="1">
+      <tr><td bgcolor="#e0e0e0" align="center" colspan="1"><font color="#000000"><b>Customer</b></font></td></tr>
+      <tr><td align="left"><font color="#000000"><u>CustomerId</u></font></td></tr>
+      <tr><td align="left"><font color="#000000">FirstName</font></td></tr>
+      <tr><td align="left"><font color="#000000">LastName</font></td></tr>
+      <tr><td align="left"><font color="#000000">Company*</font></td></tr>
+      <tr><td align="left"><font color="#000000">Address*</font></td></tr>
+      <tr><td align="left"><font color="#000000">City*</font></td></tr>
+      <tr><td align="left"><font color="#000000">State*</font></td></tr>
+      <tr><td align="left"><font color="#000000">Country*</font></td></tr>
+      <tr><td align="left"><font color="#000000">PostalCode*</font></td></tr>
+      <tr><td align="left"><font color="#000000">Phone*</font></td></tr>
+      <tr><td align="left"><font color="#000000">Fax*</font></td></tr>
+      <tr><td align="left"><font color="#000000">Email</font></td></tr>
+      <tr><td align="left"><font color="#000000"><i>SupportRepId</i>*</font></td></tr>
+    </table>>
+  ]
+  n4 [
+    fillcolor="#f5f5f5" color="#6c6c6c" penwidth="1"
+    label=<<table style="rounded" border="0" cellborder="0" cellspacing="0" cellpadding="1">
+      <tr><td bgcolor="#e0e0e0" align="center" colspan="1"><font color="#000000"><b>Employee</b></font></td></tr>
+      <tr><td align="left"><font color="#000000"><u>EmployeeId</u></font></td></tr>
+      <tr><td align="left"><font color="#000000">LastName</font></td></tr>
+      <tr><td align="left"><font color="#000000">FirstName</font></td></tr>
+      <tr><td align="left"><font color="#000000">Title*</font></td></tr>
+      <tr><td align="left"><font color="#000000"><i>ReportsTo</i>*</font></td></tr>
+      <tr><td align="left"><font color="#000000">BirthDate*</font></td></tr>
+      <tr><td align="left"><font color="#000000">HireDate*</font></td></tr>
+      <tr><td align="left"><font color="#000000">Address*</font></td></tr>
+      <tr><td align="left"><font color="#000000">City*</font></td></tr>
+      <tr><td align="left"><font color="#000000">State*</font></td></tr>
+      <tr><td align="left"><font color="#000000">Country*</font></td></tr>
+      <tr><td align="left"><font color="#000000">PostalCode*</font></td></tr>
+      <tr><td align="left"><font color="#000000">Phone*</font></td></tr>
+      <tr><td align="left"><font color="#000000">Fax*</font></td></tr>
+      <tr><td align="left"><font color="#000000">Email*</font></td></tr>
+    </table>>
+  ]
+  n5 [
+    fillcolor="#f5f5f5" color="#6c6c6c" penwidth="1"
+    label=<<table style="rounded" border="0" cellborder="0" cellspacing="0" cellpadding="1">
+      <tr><td bgcolor="#e0e0e0" align="center" colspan="1"><font color="#000000"><b>Genre</b></font></td></tr>
+      <tr><td align="left"><font color="#000000"><u>GenreId</u></font></td></tr>
+      <tr><td align="left"><font color="#000000">Name*</font></td></tr>
+    </table>>
+  ]
+  n6 [
+    fillcolor="#f5f5f5" color="#6c6c6c" penwidth="1"
+    label=<<table style="rounded" border="0" cellborder="0" cellspacing="0" cellpadding="1">
+      <tr><td bgcolor="#e0e0e0" align="center" colspan="1"><font color="#000000"><b>Invoice</b></font></td></tr>
+      <tr><td align="left"><font color="#000000"><u>InvoiceId</u></font></td></tr>
+      <tr><td align="left"><font color="#000000"><i>CustomerId</i></font></td></tr>
+      <tr><td align="left"><font color="#000000">InvoiceDate</font></td></tr>
+      <tr><td align="left"><font color="#000000">BillingAddress*</font></td></tr>
+      <tr><td align="left"><font color="#000000">BillingCity*</font></td></tr>
+      <tr><td align="left"><font color="#000000">BillingState*</font></td></tr>
+      <tr><td align="left"><font color="#000000">BillingCountry*</font></td></tr>
+      <tr><td align="left"><font color="#000000">BillingPostalCode*</font></td></tr>
+      <tr><td align="left"><font color="#000000">Total</font></td></tr>
+    </table>>
+  ]
+  n7 [
+    fillcolor="#f5f5f5" color="#6c6c6c" penwidth="1"
+    label=<<table style="rounded" border="0" cellborder="0" cellspacing="0" cellpadding="1">
+      <tr><td bgcolor="#e0e0e0" align="center" colspan="1"><font color="#000000"><b>InvoiceLine</b></font></td></tr>
+      <tr><td align="left"><font color="#000000"><u>InvoiceLineId</u></font></td></tr>
+      <tr><td align="left"><font color="#000000"><i>InvoiceId</i></font></td></tr>
+      <tr><td align="left"><font color="#000000"><i>TrackId</i></font></td></tr>
+      <tr><td align="left"><font color="#000000">UnitPrice</font></td></tr>
+      <tr><td align="left"><font color="#000000">Quantity</font></td></tr>
+    </table>>
+  ]
+  n8 [
+    fillcolor="#f5f5f5" color="#6c6c6c" penwidth="1"
+    label=<<table style="rounded" border="0" cellborder="0" cellspacing="0" cellpadding="1">
+      <tr><td bgcolor="#e0e0e0" align="center" colspan="1"><font color="#000000"><b>MediaType</b></font></td></tr>
+      <tr><td align="left"><font color="#000000"><u>MediaTypeId</u></font></td></tr>
+      <tr><td align="left"><font color="#000000">Name*</font></td></tr>
+    </table>>
+  ]
+  n9 [
+    fillcolor="#f5f5f5" color="#6c6c6c" penwidth="1"
+    label=<<table style="rounded" border="0" cellborder="0" cellspacing="0" cellpadding="1">
+      <tr><td bgcolor="#e0e0e0" align="center" colspan="1"><font color="#000000"><b>Playlist</b></font></td></tr>
+      <tr><td align="left"><font color="#000000"><u>PlaylistId</u></font></td></tr>
+      <tr><td align="left"><font color="#000000">Name*</font></td></tr>
+    </table>>
+  ]
+  n10 [
+    fillcolor="#f5f5f5" color="#6c6c6c" penwidth="1"
+    label=<<table style="rounded" border="0" cellborder="0" cellspacing="0" cellpadding="1">
+      <tr><td bgcolor="#e0e0e0" align="center" colspan="1"><font color="#000000"><b>PlaylistTrack</b></font></td></tr>
+      <tr><td align="left"><font color="#000000"><i><u>PlaylistId</u></i></font></td></tr>
+      <tr><td align="left"><font color="#000000"><i><u>TrackId</u></i></font></td></tr>
+    </table>>
+  ]
+  n11 [
+    fillcolor="#f5f5f5" color="#6c6c6c" penwidth="1"
+    label=<<table style="rounded" border="0" cellborder="0" cellspacing="0" cellpadding="1">
+      <tr><td bgcolor="#e0e0e0" align="center" colspan="1"><font color="#000000"><b>Track</b></font></td></tr>
+      <tr><td align="left"><font color="#000000"><u>TrackId</u></font></td></tr>
+      <tr><td align="left"><font color="#000000">Name</font></td></tr>
+      <tr><td align="left"><font color="#000000"><i>AlbumId</i>*</font></td></tr>
+      <tr><td align="left"><font color="#000000"><i>MediaTypeId</i></font></td></tr>
+      <tr><td align="left"><font color="#000000"><i>GenreId</i>*</font></td></tr>
+      <tr><td align="left"><font color="#000000">Composer*</font></td></tr>
+      <tr><td align="left"><font color="#000000">Milliseconds</font></td></tr>
+      <tr><td align="left"><font color="#000000">Bytes*</font></td></tr>
+      <tr><td align="left"><font color="#000000">UnitPrice</font></td></tr>
+    </table>>
+  ]
+
+  n1 -> n2 [ penwidth="1" color="#696969" arrowtail="crow" ]
+  n3 -> n4 [ penwidth="1" color="#696969" style="dashed" arrowtail="crow" ]
+  n4 -> n4 [ penwidth="1" color="#696969" style="dashed" arrowtail="crow" ]
+  n6 -> n3 [ penwidth="1" color="#696969" arrowtail="crow" ]
+  n7 -> n6 [ penwidth="1" color="#696969" arrowtail="crow" ]
+  n7 -> n11 [ penwidth="1" color="#696969" arrowtail="crow" ]
+  n10 -> n9 [ penwidth="1" color="#696969" arrowtail="crow" ]
+  n10 -> n11 [ penwidth="1" color="#696969" arrowtail="crow" ]
+  n11 -> n1 [ penwidth="1" color="#696969" style="dashed" arrowtail="crow" ]
+  n11 -> n5 [ penwidth="1" color="#696969" style="dashed" arrowtail="crow" ]
+  n11 -> n8 [ penwidth="1" color="#696969" arrowtail="crow" ]
+}
+</textarea></body></html>
